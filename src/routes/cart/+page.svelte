@@ -105,7 +105,6 @@
     .body {
         margin: 1rem 14rem;
         padding: 1rem;
-        height: 100vh; 
         overflow-y: auto;
     }
 
