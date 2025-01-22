@@ -24,13 +24,42 @@
                                     <!-- <img src="../src/assets/images/backgrounds/background.jpg" width="auto" height="auto" alt="product"/> -->
                                 </div>
                                 <div class="prod-info"> 
-                                    <p>prod name</p>
+                                    <h3>prod name</h3>
                                     <input type="number" id="quantity" name="quantity" min="1" max="5">
                                     <p>$0</p>
                                 </div>
                             </div>
+                            <div class="remove">
                             <button class="remove-btn">remove</button>
+                            </div>
                         <line></line>
+                            <div class="cart-item">
+                            <div class="prod-img">
+                                <!-- <img src="../src/assets/images/backgrounds/background.jpg" width="auto" height="auto" alt="product"/> -->
+                            </div>
+                            <div class="prod-info"> 
+                                <h3>prod name</h3>
+                                <input type="number" id="quantity" name="quantity" min="1" max="5">
+                                <p>$0</p>
+                            </div>
+                            </div>
+                            <div class="remove">
+                            <button class="remove-btn">remove</button>
+                            </div>
+                        <line></line>
+                            <div class="cart-item">
+                            <div class="prod-img">
+                                <!-- <img src="../src/assets/images/backgrounds/background.jpg" width="auto" height="auto" alt="product"/> -->
+                            </div>
+                            <div class="prod-info"> 
+                                <h3>prod name</h3>
+                                <input type="number" id="quantity" name="quantity" min="1" max="5">
+                                <p>$0</p>
+                            </div>
+                            </div>
+                            <div class="remove">
+                            <button class="remove-btn">remove</button>
+                            </div>
                     </div>
                 </div>
 
@@ -109,10 +138,137 @@
         display: flex;
         height: auto;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         flex-direction: row; 
+        gap: 4rem;
         width: 100%;
-
     }
+
+    .cart-prods {
+        display: flex;
+        padding: 20px 34px;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 21px;
+        border-radius: 20px;
+        border: 1px solid #000;
+        background: rgba(250, 250, 250, 0.90);
+    }
+
+    .cart-labels {
+        display: flex;
+        padding-top: 10px;
+        justify-content: flex-end;
+        align-items: flex-start;
+        gap: 4rem;
+    }
+    
+    line {
+        display: flex;
+        width: 100%;
+        height: 1px;
+        background-color: var(--overlay);
+        margin: 2rem;
+    }
+
+    .cart-item {
+        display: flex;
+        width: auto;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    .prod-img {
+        display: flex;
+        width: 9rem;
+        height: 5rem;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        background-color: var(--overlay);
+    }
+
+    .prod-info {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    .remove {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
+        font-style: italic;
+    }
+
+    .remove-btn {
+        display: flex;
+        width: 100px;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        text-decoration: underline;
+        /* font-family: var(--font); */
+    }
+
+    .order-summary {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 34px;
+        border-radius: 20px;
+        border: 1px solid #000;
+        background: rgba(250, 250, 250, 0.90);
+    }
+
+    .cart-total {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 21px;
+    }
+
+    .cart-total-labels {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .subtotal, .tax, .shipping, .total {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5rem;
+    }
+
+    .total {
+        font-weight: 700;
+    }
+
+    .checkout-btn {
+        display: flex;
+        width: 200px;
+        padding: 1.5rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        border: none;
+        border-radius: 132px;
+        background: var(--olive);
+        color: var(--white);
+        margin: 2rem 1rem;
+    }
+
 
 </style>
