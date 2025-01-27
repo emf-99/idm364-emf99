@@ -30,9 +30,15 @@
     }
 
     .body {
-        margin: 1rem 14rem;
         padding: 1rem;
         overflow-y: auto;
+        max-width: 65%;
+        width: 100%;
+        height: auto;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .about-container {
@@ -85,6 +91,16 @@
         height: 7rem;
         width: 7rem;
 
+    }
+
+    @media (max-width: 768px) {
+        .body {
+            max-width: 90%;
+        }
+
+        .about-main {
+            padding: 1rem;
+        }
     }
 
 

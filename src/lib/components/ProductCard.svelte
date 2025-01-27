@@ -23,8 +23,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       gap: 1rem;
       width: 16rem;
+      height: auto;
       padding: 1rem;
       text-decoration: none;
       color: inherit;
@@ -62,11 +64,13 @@
     h2 {
       font-size: 1.5rem;
       background-color: transparent;
+      text-transform: lowercase;
     }
 
     p {
       font-size: 1.25rem;
       background-color: transparent;
+      text-transform: lowercase;
     }
 
     .prod-name {

@@ -13,15 +13,15 @@
             <div class="cart-row">
                 <div class="cart-prods">
                     <div class="cart-prod">
-                        <div class="cart-labels">
+                        <!-- <div class="cart-labels">
                             <p>item</p>
                             <p>quantity</p>
                             <p>price</p>
                         </div>
-                        <line></line>
+                        <line></line> -->
                             <div class="cart-item">
                                 <div class="prod-img">
-                                    <!-- <img src="../src/assets/images/backgrounds/background.jpg" width="auto" height="auto" alt="product"/> -->
+                                    <img src="../src/assets/images/products/is_this_it.png" width="auto" height="auto" alt="product"/>
                                 </div>
                                 <div class="prod-info"> 
                                     <h3>prod name</h3>
@@ -35,7 +35,7 @@
                         <line></line>
                             <div class="cart-item">
                             <div class="prod-img">
-                                <!-- <img src="../src/assets/images/backgrounds/background.jpg" width="auto" height="auto" alt="product"/> -->
+                                <img src="../src/assets/images/products/is_this_it.png" width="auto" height="auto" alt="product"/>
                             </div>
                             <div class="prod-info"> 
                                 <h3>prod name</h3>
@@ -49,7 +49,7 @@
                         <line></line>
                             <div class="cart-item">
                             <div class="prod-img">
-                                <!-- <img src="../src/assets/images/backgrounds/background.jpg" width="auto" height="auto" alt="product"/> -->
+                                <img src="../src/assets/images/products/is_this_it.png" width="auto" height="auto" alt="product"/>
                             </div>
                             <div class="prod-info"> 
                                 <h3>prod name</h3>
@@ -103,9 +103,15 @@
     }
 
     .body {
-        margin: 1rem 14rem;
         padding: 1rem;
         overflow-y: auto;
+        max-width: 75%;
+        width: 100%;
+        height: auto;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .cart-container {
@@ -154,13 +160,13 @@
         background: rgba(250, 250, 250, 0.90);
     }
 
-    .cart-labels {
+    /* .cart-labels {
         display: flex;
         padding-top: 10px;
         justify-content: flex-end;
         align-items: flex-start;
         gap: 4rem;
-    }
+    } */
     
     line {
         display: flex;
@@ -180,12 +186,20 @@
 
     .prod-img {
         display: flex;
-        width: 9rem;
-        height: 5rem;
+        min-width: 20%;
+        height: auto;
         justify-content: center;
         align-items: center;
         border-radius: 10px;
         background-color: var(--overlay);
+    }
+
+    .prod-img img {
+        display: flex;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        background-color: transparent;
     }
 
     .prod-info {
@@ -209,8 +223,8 @@
         display: flex;
         width: 100px;
         height: 40px;
-        justify-content: center;
-        align-items: center;
+        justify-content: flex-end;
+        align-items: flex-end;
         border: none;
         text-decoration: underline;
         /* font-family: var(--font); */
@@ -269,5 +283,115 @@
         margin: 2rem 1rem;
     }
 
+    .cart-prod {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cart-prod, .cart-prod, .cart-item, .remove, .cart-total, .cart-total-labels, .subtotal, .tax, .shipping, .total {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+        }
+
+    @media (max-width: 1350px) {
+        .body {
+            max-width: 90%;
+        }
+
+        .prod-img {
+            min-width: 20%;
+            height: auto;
+        }
+    }
+
+    @media (max-width: 1090px) {
+        .cart-row {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+        }
+
+        .cart-prods, .order-summary, .cart-prod, .cart-item, .remove, .cart-total, .cart-total-labels, .subtotal, .tax, .shipping, .total {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    @media (max-width: 980px) {
+
+        .cart-row {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+        }
+
+        .cart-prods, .order-summary, .cart-prod, .cart-item, .remove, .cart-total, .cart-total-labels, .subtotal, .tax, .shipping, .total {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    @media (max-width: 750px) {
+        .cart-prod {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cart-item, .prod-info {
+            gap: 2rem;
+        }
+
+        .prod-img {
+            min-width: 30%;
+            height: auto;
+        }
+
+        .subtotal, .tax, .shipping, .total {
+            gap: 5px;
+        }
+
+        .order-summary {
+            padding: 2rem;
+        }
+    }
+
+    @media (max-width: 630px){
+        .prod-img {
+            max-width: 40%;
+            height: auto;
+        }
+
+        .prod-info {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    @media (max-width: 375px) {
+        .subtotal, .tax, .shipping, .total {
+            gap: 5px;
+        }
+
+        .order-summary {
+            padding: 2rem;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 1rem;
+        }
+        .prod-img {
+            max-width: 40%;
+            height: auto;
+        }
+    }
 
 </style>

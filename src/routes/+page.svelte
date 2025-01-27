@@ -32,7 +32,7 @@
         },
         {
             id: 4,
-            title: "Silver Turntable",
+            title: "Silver",
             artist: "Turntable",
             type: "record players",
             price: 200.99,
@@ -41,7 +41,7 @@
         },
         {
             id: 5,
-            title: "White Turntable",
+            title: "White",
             artist: "Turntable",
             type: "record players",
             price: 205.95,
@@ -50,7 +50,7 @@
         },
         {
             id: 6,
-            title: "Gold Turntable",
+            title: "Gold",
             artist: "Turntable",
             type: "record players",
             price: 195.99,
@@ -68,12 +68,12 @@
         },
         {
             id: 8,
-            title: "Aligator Bites Never Heal",
-            artist: "Doechii",
+            title: "Bird's Eye",
+            artist: "Ravyn Lenae",
             type: "cds",
             price: 20.99,
-            desc: "A rising star’s innovative project merging hip-hop and alternative sounds. Showcases Doechii’s dynamic vocal range and fearless lyrical style. Ideal for listeners craving fresh, genre-defying music.",
-            img: "/src/assets/images/products/aligator.png",
+            desc: "A dreamy, soul-infused track spotlighting Ravyn Lenae’s mesmerizing vocals and innovative R&B style. Its airy production and introspective lyrics create a captivating sonic experience for fans seeking fresh, forward-thinking music.",
+            img: "/src/assets/images/products/birdseye.png",
         },
         {
             id: 9,
@@ -86,7 +86,7 @@
         },
         {
             id: 10,
-            title: "Pink CD Player",
+            title: "Pink",
             artist: "CD Player",
             type: "cd players",
             price: 35.99,
@@ -95,7 +95,7 @@
         },
         {
             id: 11,
-            title: "Oak CD Player",
+            title: "Oak",
             artist: "CD Player",
             type: "cd players",
             price: 40.99,
@@ -104,7 +104,7 @@
         },
         {
             id: 12,
-            title: "Silver CD Player",
+            title: "Silver",
             artist: "CD Player",
             type: "cd players",
             price: 36.95,
@@ -127,8 +127,6 @@
 </head>
 
 <div class="body">
-
-    <div class="container">
         {#each Object.keys(groupedProducts) as type}
         <div class="row">
             <div class="prod-kind">
@@ -144,17 +142,22 @@
     {/each}
     </div>
 
-</div>
 
 <style>
     * {
         background-color: transparent;
     }
-
+    
     .body {
-        margin: 1rem 14rem;
         padding: 1rem;
         overflow-y: auto;
+        max-width: 65%;
+        width: 100%;
+        height: auto;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .row {
@@ -186,10 +189,11 @@
     .prod-card {
         display: flex;
         width: 16rem;
-        height: auto;
+        height: 24rem;
         padding: 1rem;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         gap: 1rem;
         border-radius: 1rem;
         border: 1px solid #000;
@@ -218,11 +222,14 @@
     h2 {
       font-size: 1.5rem;
       background-color: transparent;
+      text-transform: lowercase;
+      max-width: 20ch;
     }
 
     p {
       font-size: 1.25rem;
       background-color: transparent;
+      text-transform: lowercase;
     }
 
     .prod-name {
@@ -231,6 +238,89 @@
         align-items: flex-start;
         gap: 1rem;
         background-color: transparent;
+    }
+
+    @media (max-width: 1310px) {
+
+        .body{
+            max-width: 80%;
+        }
+
+        .row {
+            gap: 24px;
+            padding-top: 3rem;
+        }
+
+        .prod-kind {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        .prod-row {
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+        }
+
+        .prod-card {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 1060px) {
+        .body {
+            margin: 1rem 4rem;
+            padding: 1rem;
+        }
+
+        .row {
+            gap: 24px;
+            padding-top: 3rem;
+        }
+
+        .prod-kind {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        .prod-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .prod-card {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 375px) {
+        .body {
+            margin: 1rem;
+            padding: 1rem;
+        }
+
+        .row {
+            gap: 16px;
+            padding-top: 2rem;
+        }
+
+        .prod-kind {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .prod-row {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .prod-card {
+            width: 100%;
+        }
     }
 
 
