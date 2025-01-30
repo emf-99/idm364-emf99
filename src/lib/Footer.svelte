@@ -1,8 +1,8 @@
 <!-- Footer.svelte -->
+<script lang="js">
+    import '$lib/css/style.css';
+</script>
 
-<head>
-    <link rel="stylesheet" href="src/css/style.css" />
-</head>
     <footer>
     <div class="footer">
         <div class="footer-content">
@@ -14,6 +14,7 @@
 </footer>
 
 <style>
+    
     footer{
         margin-top: 4rem;
     }

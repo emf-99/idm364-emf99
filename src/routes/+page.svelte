@@ -1,6 +1,9 @@
 <!-- +page.svelte -->
  <script lang="js">
+    import { onMount } from 'svelte';
     import ProductCard from '$lib/components/ProductCard.svelte';
+    import ProductDetail from '$lib/components/ProductDetail.svelte';
+    import '$lib/css/style.css';
     
     export const products = [
         {
@@ -114,20 +117,25 @@
         ];
 
         const groupedProducts = products.reduce((acc, product) => {
-        if (!acc[product.type]) {
-            acc[product.type] = [];
-        }
-        acc[product.type].push(product);
-        return acc;
+            if (!acc[product.type]) acc[product.type] = [];
+            acc[product.type].push(product);
+            return acc;
         }, {});
+
+
+        onMount(() => {
+            const savedScrollPosition = localStorage.getItem('scrollPosition');
+            if (savedScrollPosition) {
+                window.scrollTo(0, parseInt(savedScrollPosition, 10));
+                localStorage.removeItem('scrollPosition'); // Clear after restoring
+            }
+        });
  </script>
 
-<head>
-    <link rel="stylesheet" href="src/css/style.css" />
-</head>
+ <ProductDetail />
 
 <div class="body">
-        {#each Object.keys(groupedProducts) as type}
+    {#each Object.keys(groupedProducts) as type}
         <div class="row">
             <div class="prod-kind">
                 <h1>{type}</h1>
@@ -140,7 +148,7 @@
             </div>
         </div>
     {/each}
-    </div>
+</div>
 
 
 <style>

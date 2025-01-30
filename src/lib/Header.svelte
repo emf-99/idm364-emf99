@@ -1,20 +1,32 @@
 <!-- Header.svelte -->
+<script lang="js">
+    import '$lib/css/style.css';
+    import { goto } from '$app/navigation';
+
+    function goToCart() {
+        goto('/cart');
+    }
+
+    function goToHome() {
+        goto('/');
+    }
+
+</script>
 
 <head>
-    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="/src/css/style.css" />
 </head>
 
-<div class=header>
+<div class="header">
     <div></div>
 
-    <div class="logo"> 
-        <img src="../src/assets/images/icons/logo.svg" alt="logo" width="100rem" height="100rem">
+    <div on:click={goToHome} class="logo"> 
+        <img src="/src/assets/images/icons/logo.svg" alt="logo" width="100rem" height="100rem">
     </div>
 
-    <div class="cart">
-        <img src="../src/assets/images/icons/cart.svg" alt="cart" width="18" height="18.02">
-    </div>
-
+    <button on:click={goToCart} class="cart">
+        <img src="/src/assets/images/icons/cart.svg" alt="cart" width="18" height="18.02">
+    </button>
 </div>
 
 <style>

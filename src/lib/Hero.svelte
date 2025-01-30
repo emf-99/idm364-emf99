@@ -1,8 +1,7 @@
 <!-- Hero.svelte -->
-
-<head>
-    <link rel="stylesheet" href="src/css/style.css" />
-</head>
+<script lang="js">
+    import '$lib/css/style.css';
+</script>
 
 <div class=hero>
     <div class="hero-top">
@@ -20,7 +19,14 @@
 
         <p>expand your cd and vinyl collection while discovering the perfect music player.</p>
 
-        <button>shop now</button>
+        <button class="shop-now">
+            <p class="shop-now-btn">Add to cart</p>
+            <div class="arrow-icon"> 
+                <div class="border">
+                    <img src="/src/assets/images/icons/arrow.svg" width="28px" height="27px" alt="cart"/>
+                </div>
+            </div>
+        </button>
     </div>
 
 </div>
@@ -84,14 +90,49 @@
         margin: 1rem;
     }
 
-    button {
-        background-color: var(--olive);
-        color: white;
-        border: none;
-        border-radius: 40px;
-        padding: 1rem 2rem;
-        margin: 1rem;
+
+    .shop-now {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+      display: flex;
+      padding-left: 50px;
+      align-items: center;
+      gap: 50px;
+      border-radius: 132px;
+      background: #FFF;
+
+      /* ds */
+      box-shadow: 0px 4px 54.4px 0px rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+    }
+
+    .shop-now-btn {
+        display: flex;
+        padding-left: 50px;
+        align-items: center;
+        gap: 50px;
         cursor: pointer;
+        color:black;
+    }
+
+    .arrow-icon {
+        display: flex;
+        align-items: center;
+        border-radius: 100px;
+        background: #1C1B1F;
+        justify-content: center;
+        padding: 1.5rem;
+    }
+
+    .border {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100px;
+        background:var(--white);
+        padding: .5rem;
     }
 
     .cart {
@@ -106,4 +147,26 @@
         border-radius: 100%;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
+
+    @media (max-width: 535px){
+      .body {
+          max-width: 90%;
+      }
+      .shop-now {
+          max-width: 100%;
+          height: auto;
+          padding-left: 30px;
+          gap: 25px;
+      }
+
+      .shop-now-btn, .shop-now-btn p {
+          max-width: 100%;
+          height: auto;
+          padding-left: 2px;
+          font-size: 16px;
+          margin: 0;
+      }
+  }
+
+
 </style>

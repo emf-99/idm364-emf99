@@ -1,22 +1,33 @@
 <!-- src/lib/components/ProductCard.svelte -->
-<script>
-    export let product; 
-  </script>
-  
-  <a href={`/product/${product.id}`} class="prod-card">
-    <div class="prod-img">
+<script lang="js">
+  import { selectedProduct } from '$lib/store';
+  import { goto } from '$app/navigation';
+
+  export let product;
+
+  function handleClick(event) {
+      event.preventDefault(); // Prevent default anchor behavior
+      localStorage.setItem('scrollPosition', window.scrollY); // Save scroll position
+      selectedProduct.set(product);
+      goto(`/product/${product.id}`);
+  }
+</script>
+
+<a href="/product/{product.id}" on:click={handleClick} class="prod-card">
+  <div class="prod-img">
       <img src={product.img} alt={product.title} />
-    </div>
-    <div class="prod-info">
+  </div>
+  <div class="prod-info">
       <div class="prod-name">
-        <h2>{product.title}</h2>
-        <p>{product.artist}</p>
+          <h2>{product.title}</h2>
+          <p>{product.artist}</p>
       </div>
       <div class="prod-price">
-        <p>${product.price.toFixed(2)}</p>
+          <p>${product.price.toFixed(2)}</p>
       </div>
-    </div>
-  </a>
+  </div>
+</a>
+
   
   <style>
     .prod-card {
