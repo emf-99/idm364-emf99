@@ -1,7 +1,6 @@
 <script lang="js">
     import { cart } from '$lib/stores/cart';
-    // import '$lib/css/style.css';
-    import '$lib/css/cart.css';
+    // import '$lib/css/cart.css';
 
     export let product;
 
@@ -18,7 +17,6 @@
         cart.update(items => items.filter(item => item.id !== product.id));
     }
 </script>
-
 
 <div class="cart-prod">
     <div class="cart-item">
@@ -42,3 +40,4 @@
 </div>
 
 <line></line>
+

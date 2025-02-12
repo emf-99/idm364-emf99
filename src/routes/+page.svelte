@@ -1,10 +1,8 @@
-<!-- +page.svelte -->
- <script lang="js">
+<script lang="js">
     import { onMount } from 'svelte';
+    import { selectedProduct } from '$lib/store';
     import ProductCard from '$lib/components/ProductCard.svelte';
-    import ProductDetail from '$lib/components/ProductDetail.svelte';
-    // import '$lib/css/style.css';
-    
+
     export const products = [
         {
             id: 1,
@@ -114,25 +112,24 @@
             desc: "Modern metal look featuring a slim-profile design. Delivers crisp audio with simple, intuitive controls. Suited for both home stereo setups and minimalist entertainment centers.",
             img: "/src/assets/images/products/silver_cd.png",
         },
-        ];
+    ];
 
-        const groupedProducts = products.reduce((acc, product) => {
-            if (!acc[product.type]) acc[product.type] = [];
-            acc[product.type].push(product);
-            return acc;
-        }, {});
+    const groupedProducts = products.reduce((acc, product) => {
+        if (!acc[product.type]) acc[product.type] = [];
+        acc[product.type].push(product);
+        return acc;
+    }, {});
 
+    onMount(() => {
+        selectedProduct.set(null); 
 
-        onMount(() => {
-            const savedScrollPosition = localStorage.getItem('scrollPosition');
-            if (savedScrollPosition) {
-                window.scrollTo(0, parseInt(savedScrollPosition, 10));
-                localStorage.removeItem('scrollPosition'); // Clear after restoring
-            }
-        });
- </script>
-
- <ProductDetail />
+        const savedScrollPosition = localStorage.getItem('scrollPosition');
+        if (savedScrollPosition) {
+            window.scrollTo(0, parseInt(savedScrollPosition, 10));
+            localStorage.removeItem('scrollPosition');
+        }
+    });
+</script>
 
 <div class="body">
     {#each Object.keys(groupedProducts) as type}
@@ -149,7 +146,6 @@
         </div>
     {/each}
 </div>
-
 
 <style>
     * {
@@ -174,7 +170,6 @@
         align-items: flex-start;
         gap: 32px;
         align-self: stretch;
-        /* padding-top: 5rem; */
     }
 
     .prod-kind {
@@ -276,7 +271,7 @@
         }
     }
 
-    @media (max-width: 1060px) {
+    @media (max-width: 1090px) {
         .body {
             margin: 1rem 4rem;
             padding: 1rem;
@@ -331,6 +326,4 @@
             width: 100%;
         }
     }
-
-
 </style>

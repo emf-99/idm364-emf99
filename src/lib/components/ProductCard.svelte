@@ -6,8 +6,8 @@
   export let product;
 
   function handleClick(event) {
-      event.preventDefault(); // Prevent default anchor behavior
-      localStorage.setItem('scrollPosition', window.scrollY); // Save scroll position
+      event.preventDefault(); 
+      localStorage.setItem('scrollPosition', window.scrollY); 
       selectedProduct.set(product);
       goto(`/product/${product.id}`);
   }
@@ -28,64 +28,69 @@
   </div>
 </a>
 
-  
-  <style>
-    .prod-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      width: 16rem;
-      height: auto;
-      padding: 1rem;
-      text-decoration: none;
-      color: inherit;
-      border: 1px solid #000;
-      border-radius: 1rem;
-      background: var(--white);
-      box-shadow: 0px 2px 69.3px 0px rgba(0, 0, 0, 0.05);
-    }
-  
+<style>
+  .prod-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 16rem;
+    height: auto;
+    padding: 1rem;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #000;
+    border-radius: 1rem;
+    background: var(--white);
+    box-shadow: 0px 2px 69.3px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  .prod-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    background-color: transparent;
+  }
+
+  .prod-img {
+    background-color: transparent;
+  }
+
+  .prod-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+  }
+
+  .prod-price {
+    font-weight: bold;
+    color: #555;
+    background-color: transparent;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    background-color: transparent;
+    text-transform: lowercase;
+  }
+
+  p {
+    font-size: 1.25rem;
+    background-color: transparent;
+    text-transform: lowercase;
+  }
+
+  .prod-name {
+      background-color: transparent;
+  }
+
+  @media (max-width: 630px) {
     .prod-img img {
-      width: 100%;
+      width: 260%;
       height: auto;
-      border-radius: 1rem;
-      background-color: transparent;
     }
-
-    .prod-img {
-      background-color: transparent;
-    }
-  
-    .prod-info {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      background-color: transparent;
-    }
-  
-    .prod-price {
-      font-weight: bold;
-      color: #555;
-      background-color: transparent;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      background-color: transparent;
-      text-transform: lowercase;
-    }
-
-    p {
-      font-size: 1.25rem;
-      background-color: transparent;
-      text-transform: lowercase;
-    }
-
-    .prod-name {
-        background-color: transparent;
-    }
-  </style>
-  
+  }
+</style>

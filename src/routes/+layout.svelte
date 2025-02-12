@@ -8,23 +8,16 @@
     let { children } = $props();
 </script>
 
-<!-- {#if $page.url.pathname === '/'}
-    <Hero />
-{:else}
-    <Header />
-{/if} -->
-
 <Header />
 
-
-    <div class="content">
-        <div class="bg">
-            <img src="../src/assets/images/backgrounds/bg-orb.png" class="orb1" alt="background"/>
-            <img src="../src/assets/images/backgrounds/bg-orb.png" class="orb2" alt="background"/>
-            <!-- <img src="../src/assets/images/backgrounds/bg-orb.png" class="orb3" alt="background"/> -->
-        </div>
-        {@render children?.()}
+<div class="content">
+    <div class="bg">
+        <img src="../src/assets/images/backgrounds/bg-orb.png" class="orb1" alt="background"/>
+        <img src="../src/assets/images/backgrounds/bg-orb.png" class="orb2" alt="background"/>
+        <!-- <img src="../src/assets/images/backgrounds/bg-orb.png" class="orb3" alt="background"/> -->
     </div>
+    {@render children?.()}
+</div>
 
 <Footer />
 
@@ -49,6 +42,8 @@
         height: 100%;
         z-index: -1;
         overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
     }
 
     .bg img {
@@ -68,6 +63,32 @@
         position: absolute;
         top: 60rem;
         right: 40rem;
+    }
+
+    @media (max-width: 1090px) {
+        .bg {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, auto);
+            gap: 1rem;
+        }
+
+        .bg img {
+            width: 100%;
+            height: auto;
+        }
+
+        .orb1 {
+        position: absolute;
+        top: 0;
+        left: 20rem;
+    }
+
+        .orb2 {
+            position: absolute;
+            top: 20rem;
+            right: 20rem;
+        }
     }
 
     footer {

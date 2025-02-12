@@ -64,7 +64,6 @@
   </div>
 {/if}
 
-
 <style>
   * {
       background-color: transparent;
