@@ -1,6 +1,6 @@
 <!-- Header.svelte -->
 <script lang="js">
-    import '$lib/css/style.css';
+    // import '$lib/css/style.css';
     import { goto } from '$app/navigation';
 
     function goToCart() {
@@ -13,9 +13,9 @@
 
 </script>
 
-<head>
+<!-- <head>
     <link rel="stylesheet" href="/src/css/style.css" />
-</head>
+</head> -->
 
 <div class="header">
     <div></div>

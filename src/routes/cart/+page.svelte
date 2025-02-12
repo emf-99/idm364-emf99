@@ -2,8 +2,8 @@
     import { cart } from '$lib/stores/cart';
     import CartItem from '$lib/components/CartItem.svelte';
     import OrderSummary from '$lib/components/OrderSummary.svelte';
-    import '$lib/css/style.css';
-    import '$lib/css/cart.css';
+    // import '$lib/css/style.css';
+    // import '$lib/css/cart.css';
 </script>
 
 <div class="body">

@@ -1,6 +1,6 @@
 <script lang="js">
     import ProductDetail from '$lib/components/ProductDetail.svelte';
-    import '$lib/css/style.css';
+    // import '$lib/css/style.css';
 </script>
 
 <ProductDetail />

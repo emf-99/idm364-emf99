@@ -1,6 +1,6 @@
 <script lang="js">
     import { cart } from '$lib/stores/cart';
-    import '$lib/css/style.css';
+    // import '$lib/css/style.css';
     import '$lib/css/cart.css';
 
     export let product;

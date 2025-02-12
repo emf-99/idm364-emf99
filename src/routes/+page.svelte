@@ -3,7 +3,7 @@
     import { onMount } from 'svelte';
     import ProductCard from '$lib/components/ProductCard.svelte';
     import ProductDetail from '$lib/components/ProductDetail.svelte';
-    import '$lib/css/style.css';
+    // import '$lib/css/style.css';
     
     export const products = [
         {
@@ -174,7 +174,7 @@
         align-items: flex-start;
         gap: 32px;
         align-self: stretch;
-        padding-top: 5rem;
+        /* padding-top: 5rem; */
     }
 
     .prod-kind {
@@ -192,6 +192,7 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
+        padding-bottom: 5rem;
     }
 
     .prod-card {

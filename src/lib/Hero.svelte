@@ -1,6 +1,6 @@
 <!-- Hero.svelte -->
 <script lang="js">
-    import '$lib/css/style.css';
+    // import '$lib/css/style.css';
 </script>
 
 <div class=hero>

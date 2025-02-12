@@ -1,6 +1,6 @@
 <!-- Footer.svelte -->
 <script lang="js">
-    import '$lib/css/style.css';
+    // import '$lib/css/style.css';
 </script>
 
     <footer>
@@ -14,10 +14,6 @@
 </footer>
 
 <style>
-    
-    footer{
-        margin-top: 4rem;
-    }
 
     .footer {
         bottom: 0;
@@ -30,6 +26,7 @@
         width: 100%;
         border-radius: 40px 40px 0 0;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+        z-index: 20;
         /* margin-top: 20rem; */
     }
     .footer-content {

@@ -126,7 +126,7 @@
       justify-content: center;
       align-items: center;
       border-radius: 20px;
-      background-color: var(--overlay);
+      /* background-color: var(--overlay); */
   }
 
   .prod-img img {
