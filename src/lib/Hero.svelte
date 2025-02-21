@@ -8,13 +8,13 @@
         <div></div>
 
         <div class="cart">
-            <img src="../src/assets/images/icons/cart.svg" alt="cart" width="18" height="18.02">
+            <img src="/assets/images/icons/cart.svg" alt="cart" width="18" height="18.02">
         </div>
     </div>
 
     <div class="hero-bottom">
         <div class="logo"> 
-            <img src="../src/assets/images/icons/logo.svg" alt="logo" width="200rem" height="200rem">
+            <img src="/assets/images/icons/logo.svg" alt="logo" width="200rem" height="200rem">
         </div>
 
         <p>expand your cd and vinyl collection while discovering the perfect music player.</p>
@@ -23,7 +23,7 @@
             <p class="shop-now-btn">Add to cart</p>
             <div class="arrow-icon"> 
                 <div class="border">
-                    <img src="/src/assets/images/icons/arrow.svg" width="28px" height="27px" alt="cart"/>
+                    <img src="/assets/images/icons/arrow.svg" width="28px" height="27px" alt="cart"/>
                 </div>
             </div>
         </button>

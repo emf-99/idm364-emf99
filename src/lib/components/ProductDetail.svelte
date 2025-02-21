@@ -23,7 +23,7 @@
     <div class="row">
         <div class="prod-name">
           <h1>{product.title}</h1>
-            <img src="/src/assets/images/icons/arrow.svg" width="18rem" height="18rem" alt="arrow" />
+            <img src="/assets/images/icons/arrow.svg" width="18rem" height="18rem" alt="arrow" />
         </div>
 
         <div class="prod-row">
@@ -52,7 +52,7 @@
                             <p class="add-to-cart-btn">Add to cart</p>
                             <div class="cart-icon"> 
                                 <div class="border">
-                                    <img src="/src/assets/images/icons/cart.svg" width="28px" height="27px" alt="cart"/>
+                                    <img src="/assets/images/icons/cart.svg" width="28px" height="27px" alt="cart"/>
                                 </div>
                             </div>
                         </button>

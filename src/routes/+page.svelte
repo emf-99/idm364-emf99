@@ -27,7 +27,7 @@
     <div class="row">
       <div class="prod-kind">
         <h1>{type}</h1>
-        <img src="/src/assets/images/icons/arrow.svg" width="18rem" height="18rem" alt="arrow" />
+        <img src="/assets/images/icons/arrow.svg" width="18rem" height="18rem" alt="arrow" />
       </div>
       <div class="prod-row">
         {#each groupedProducts[type] as product}

@@ -3,7 +3,7 @@
     <div class="about-container">
         <div class="about-title">
             <h1>about</h1>
-            <img src="../src/assets/images/icons/arrow.svg" width="18rem" height="18rem" alt="arrow" />
+            <img src="/assets/images/icons/arrow.svg" width="18rem" height="18rem" alt="arrow" />
         </div>
 
         <div class="about-main">
@@ -13,7 +13,7 @@
             <p>Lorem ipsum dolor sit amet consectetur. Cursus nisl id enim venenatis nunc augue est amet. Ipsum magna odio sem donec vestibulum praesent adipiscing luctus lorem. Cursus amet ultrices vivamus ac ac. Nulla feugiat gravida nam placerat arcu vitae quis nisl molestie. Vulputate massa dictum malesuada facilisis cursus faucibus quis amet.Lorem ipsum dolor sit amet consectetur. Cursus nisl id enim venenatis nunc augue est amet. Ipsum magna odio sem donec vestibulum praesent adipiscing luctus lorem. Cursus amet ultrices vivamus ac ac. Nulla feugiat gravida nam placerat arcu vitae quis nisl </p>
             <div class="closing-about">
                 <h3> happy listening, </h3>
-                <image class="logo-black" src="../src/assets/images/icons/logo-black.svg" width="18rem" height="18rem" alt="logo"/>
+                <image class="logo-black" src="/assets/images/icons/logo-black.svg" width="18rem" height="18rem" alt="logo"/>
             </div>
         </div>
     </div>

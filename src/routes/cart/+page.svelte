@@ -10,7 +10,7 @@
     <div class="cart-container">
         <div class="cart-title">
             <h1>cart</h1>
-            <img src="/src/assets/images/icons/arrow.svg" width="18rem" height="18rem" alt="arrow" />
+            <img src="/assets/images/icons/arrow.svg" width="18rem" height="18rem" alt="arrow" />
         </div>
 
         <div class="cart-main">

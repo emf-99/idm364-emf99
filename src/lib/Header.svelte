@@ -19,11 +19,11 @@
     <div></div>
 
     <div on:click={goToHome} class="logo"> 
-        <img src="/src/assets/images/icons/logo.svg" alt="logo" width="100rem" height="100rem">
+        <img src="/assets/images/icons/logo.svg" alt="logo" width="100rem" height="100rem">
     </div>
 
     <button on:click={goToCart} class="cart">
-        <img src="/src/assets/images/icons/cart.svg" alt="cart" width="18" height="18.02">
+        <img src="/assets/images/icons/cart.svg" alt="cart" width="18" height="18.02">
         {#if $hasItemsInCart}
             <div class="cart-indicator"></div>
         {/if}

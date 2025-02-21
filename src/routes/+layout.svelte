@@ -12,9 +12,9 @@
 
 <div class="content">
     <div class="bg">
-        <img src="../src/assets/images/backgrounds/bg-orb.png" class="orb1" alt="background"/>
-        <img src="../src/assets/images/backgrounds/bg-orb.png" class="orb2" alt="background"/>
-        <!-- <img src="../src/assets/images/backgrounds/bg-orb.png" class="orb3" alt="background"/> -->
+        <img src="/assets/images/backgrounds/bg-orb.png" class="orb1" alt="background"/>
+        <img src="/assets/images/backgrounds/bg-orb.png" class="orb2" alt="background"/>
+        <!-- <img src="/assets/images/backgrounds/bg-orb.png" class="orb3" alt="background"/> -->
     </div>
     {@render children?.()}
 </div>
