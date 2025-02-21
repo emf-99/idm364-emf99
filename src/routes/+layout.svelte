@@ -91,11 +91,11 @@
         }
     }
 
-    footer {
+    /* footer {
         width: 100%;
         padding: 1rem;
         text-align: center;
         position: relative;
         z-index: 10;
-    }
+    } */
 </style>

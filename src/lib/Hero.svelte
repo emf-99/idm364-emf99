@@ -44,7 +44,7 @@
             var(--overlay), 
             var(--overlay)
             ),
-            url('../assets/images/backgrounds/background.jpg');
+            url('/assets/images/backgrounds/background.jpg');
         width: 100%;
         height: 100%;
         border-radius: 0 0 40px 40px;
@@ -159,7 +159,7 @@
           gap: 25px;
       }
 
-      .shop-now-btn, .shop-now-btn p {
+      .shop-now-btn {
           max-width: 100%;
           height: auto;
           padding-left: 2px;
