@@ -84,7 +84,7 @@
         right: 0;
         width: 10px;
         height: 10px;
-        background-color: var(--yellow);
+        background-color: #D86D24;
         border-radius: 50%;
     }
 </style>
