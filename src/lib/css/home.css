@@ -1,0 +1,104 @@
+/* main product page styling */
+.body {
+    padding: 1rem;
+    overflow-y: auto;
+    max-width: 65%;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    align-self: stretch;
+    background-color: transparent;
+  }
+
+  .prod-kind {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: transparent;
+  }
+
+  .prod-row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 5rem;
+    background-color: transparent;
+  }
+
+  /* Media queries remain unchanged */
+  @media (max-width: 1310px) {
+    .body {
+      max-width: 80%;
+    }
+    .row {
+      gap: 24px;
+      padding-top: 3rem;
+    }
+    .prod-kind {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+    .prod-row {
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+    }
+  }
+
+  @media (max-width: 1090px) {
+    .body {
+      margin: 1rem 4rem;
+      padding: 1rem;
+    }
+    .row {
+      gap: 24px;
+      padding-top: 3rem;
+    }
+    .prod-kind {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+    .prod-row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .body {
+      margin: 1rem;
+      padding: 1rem;
+    }
+    .row {
+      gap: 16px;
+      padding-top: 2rem;
+    }
+    .prod-kind {
+      flex-direction: row;
+      align-items: center;
+    }
+    .prod-row {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }

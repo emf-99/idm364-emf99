@@ -38,4 +38,8 @@
         margin: 2rem;
         padding: 2rem;
     }
+    
+    .footer-content p {
+    color: var(--white) !important;
+    }
 </style>

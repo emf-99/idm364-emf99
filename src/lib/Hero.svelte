@@ -36,7 +36,7 @@
       <p>expand your cd and vinyl collection while discovering the perfect music player.</p>
   
       <button class="shop-now">
-        <p class="shop-now-btn">Add to cart</p>
+        <p class="shop-now-btn">shop now</p>
         <div class="arrow-icon"> 
           <div class="border">
             <img src="/assets/images/icons/arrow.svg" width="28px" height="27px" alt="cart"/>

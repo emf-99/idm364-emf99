@@ -1,35 +1,5 @@
-<!-- src/lib/components/ProductCard.svelte -->
-<script lang="js">
-  import { selectedProduct } from '$lib/store';
-  import { goto } from '$app/navigation';
-
-  export let product;
-
-  function handleClick(event) {
-    event.preventDefault(); 
-    localStorage.setItem('scrollPosition', window.scrollY); 
-    selectedProduct.set(product);
-    goto(`/product/${product.id}`);
-  }
-</script>
-
-<a href="/product/{product.id}" on:click={handleClick} class="prod-card">
-  <div class="prod-img">
-    <img src={product.img} alt={product.title} />
-  </div>
-  <div class="prod-info">
-    <div class="prod-name">
-      <h2>{product.title}</h2>
-      <p>{product.artist}</p>
-    </div>
-    <div class="prod-price">
-      <p>${product.price.toFixed(2)}</p>
-    </div>
-  </div>
-</a>
-
-<style>
-  .prod-card {
+/* product card */
+.prod-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,12 +14,6 @@
     border-radius: 1rem;
     background: var(--white);
     box-shadow: 0px 2px 69.3px 0px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-  }
-
-  .prod-card:hover {
-    transform: scale(1.05); /* Slight scale up */
-    box-shadow: 0px 4px 80px 0px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
   }
 
   .prod-img img {
@@ -69,6 +33,7 @@
     align-items: center;
     text-align: center;
     background-color: transparent;
+    color: #555;
   }
 
   .prod-price {
@@ -87,10 +52,11 @@
     font-size: 1.25rem;
     background-color: transparent;
     text-transform: lowercase;
+    color: #555;
   }
 
   .prod-name {
-    background-color: transparent;
+      background-color: transparent;
   }
 
   @media (max-width: 630px) {
@@ -99,4 +65,6 @@
       height: auto;
     }
   }
-</style>
+
+
+  
