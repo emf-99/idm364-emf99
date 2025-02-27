@@ -28,10 +28,9 @@
     </div>
   
     <div class="hero-bottom">
-      <div on:click={goToHome} class="logo"> 
+      <button on:click={goToHome} on:keydown={(e) => e.key === 'Enter' && goToHome()} class="logo" aria-label="Go to home">
         <img src="/assets/images/icons/logo.svg" alt="logo" width="200rem" height="200rem">
-      </div>
-      <!-- fix this -->
+      </button>
   
       <p>expand your cd and vinyl collection while discovering the perfect music player.</p>
   

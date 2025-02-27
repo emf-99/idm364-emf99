@@ -18,10 +18,9 @@
   <div class="header">
     <div></div>
   
-    <div on:click={goToHome} class="logo"> 
+    <button on:click={goToHome} on:keydown={(e) => e.key === 'Enter' && goToHome()} class="logo" aria-label="Go to home">
       <img src="/assets/images/icons/logo.svg" alt="logo" width="100rem" height="100rem">
-    </div>
-    <!-- fix this -->
+    </button>
   
     <button on:click={goToCart} class="cart">
       <img src="/assets/images/icons/cart.svg" alt="cart" width="18" height="18.02">
