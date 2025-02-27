@@ -4,12 +4,13 @@
     import Header from '$lib/Header.svelte';
     import Hero from '$lib/Hero.svelte';
     import Footer from '$lib/Footer.svelte';
-    import '$lib/css/style.css'; // Global styles
-    import '$lib/css/cart.css'; // Cart-specific styles
+    import '$lib/css/style.css'; 
+    import '$lib/css/cart.css'; 
   
     let { children } = $props();
   </script>
   
+  <!-- hero for main page only -->
   {#if $page.url.pathname === '/'}
     <Hero />
   {:else}

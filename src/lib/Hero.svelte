@@ -31,6 +31,7 @@
       <div on:click={goToHome} class="logo"> 
         <img src="/assets/images/icons/logo.svg" alt="logo" width="200rem" height="200rem">
       </div>
+      <!-- fix this -->
   
       <p>expand your cd and vinyl collection while discovering the perfect music player.</p>
   
