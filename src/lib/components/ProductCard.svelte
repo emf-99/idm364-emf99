@@ -66,14 +66,16 @@
   .prod-info {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     text-align: center;
     background-color: transparent;
   }
 
   .prod-price {
-    font-weight: bold;
-    color: #555;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     background-color: transparent;
   }
 
@@ -90,6 +92,10 @@
   }
 
   .prod-name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
     background-color: transparent;
   }
 

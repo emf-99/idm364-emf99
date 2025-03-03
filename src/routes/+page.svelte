@@ -27,7 +27,7 @@
     <div class="row">
       <div class="prod-kind">
         <h1>{type}</h1>
-        <img src="/assets/images/icons/arrow.svg" width="18rem" height="18rem" alt="arrow" />
+        <img src="/assets/images/icons/arrow.svg" width="18rem" height="18rem" class="arrow-home" alt="arrow" />
       </div>
       <div class="prod-row">
         {#each groupedProducts[type] as product}
@@ -75,6 +75,11 @@
     justify-content: space-between;
     width: 100%;
     padding-bottom: 5rem;
+  }
+
+  .arrow-home {
+    height: 44px;
+    width: 44px;
   }
 
   /* Media queries remain unchanged */

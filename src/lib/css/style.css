@@ -11,13 +11,34 @@
 
 p, h1, h2, h3, h4, h5, h6, img {
   background-color: transparent;
-  color: var(--dark-gray);
+  color: black;
+}
+
+h1 {
+  font-family: "DM Sans";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 300;
+}
+
+h2 {
+  font-family: "DM Sans";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.prod-price p {
+  font-family: "DM Sans";
+  font-size: 40px;
+  font-style: italic;
+  font-weight: 500;
 }
 
 :root {
   --white: #FFFFFF;
   --yellow: #DEE21B;
-  --overlay: rgba(222, 226, 27, 0.5);
+  --overlay: rgba(222, 226, 27, 0.4);
   --olive: #707235;
   --light-gray: #F1F1F1;
   --dark-gray: #1C1B1F;
