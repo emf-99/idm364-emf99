@@ -1,99 +1,250 @@
 <!-- src/routes/+layout.svelte -->
 <script lang="js">
-    import { page } from '$app/stores';
-    import Header from '$lib/Header.svelte';
-    import Hero from '$lib/Hero.svelte';
-    import Footer from '$lib/Footer.svelte';
-    import '$lib/css/style.css'; 
-    import '$lib/css/cart.css'; 
-  
-    let { children } = $props();
-  </script>
-  
-  <!-- hero for main page only -->
-  {#if $page.url.pathname === '/'}
-    <Hero />
-  {:else}
-    <Header />
-  {/if}
-  
-  <div class="content">
-    <div class="bg">
-      <img src="/assets/images/backgrounds/bg-orb.png" class="orb1" alt="background" />
-      <img src="/assets/images/backgrounds/bg-orb.png" class="orb2" alt="background" />
-    </div>
-    {@render children?.()}
+  import { page } from '$app/stores';
+  import Header from '$lib/Header.svelte';
+  import Hero from '$lib/Hero.svelte';
+  import Footer from '$lib/Footer.svelte';
+  import '$lib/css/style.css'; 
+  import '$lib/css/cart.css'; 
+
+  let { children } = $props();
+</script>
+
+<!-- hero for main page only -->
+{#if $page.url.pathname === '/'}
+  <Hero />
+{:else}
+  <Header />
+{/if}
+
+<div class="content">
+  <div class="bg">
+    <img src="/assets/images/backgrounds/bg-orb.png" class="orb1" alt="background" />
+    <img src="/assets/images/backgrounds/bg-orb.png" class="orb2" alt="background" />
+    <!-- Additional orbs for mobile only -->
+    <img src="/assets/images/backgrounds/bg-orb.png" class="orb3 mobile-only" alt="background" />
+    <img src="/assets/images/backgrounds/bg-orb.png" class="orb4 mobile-only" alt="background" />
+    <img src="/assets/images/backgrounds/bg-orb.png" class="orb5 mobile-only" alt="background" />
+    <img src="/assets/images/backgrounds/bg-orb.png" class="orb6 mobile-only" alt="background" />
+    <img src="/assets/images/backgrounds/bg-orb.png" class="orb7 mobile-only" alt="background" />
+    <img src="/assets/images/backgrounds/bg-orb.png" class="orb8 mobile-only" alt="background" />
   </div>
-  
-  <Footer />
-  
-  <style>
-    .content {
-      position: relative;
-      z-index: 10;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-      background-color: var(--light-gray);
-      min-height: 100vh;
-    }
-  
+  {@render children?.()}
+</div>
+
+<Footer />
+
+<style>
+  .content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: var(--light-gray);
+    min-height: 100vh;
+  }
+
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  .bg img {
+    width: 200px;
+    height: 200px;
+    border-radius: 1rem;
+    background-color: transparent;
+    position: absolute;
+  }
+
+  .orb1 {
+    height: 80rem !important;
+    width: 80rem !important;
+    padding-bottom: 30rem;
+    top: 0;
+    left: 40rem;
+    animation: float1 10s infinite ease-in-out;
+  }
+
+  .orb2 {
+    height: 80rem !important;
+    width: 80rem !important;
+    top: 60rem;
+    right: 40rem;
+    animation: float2 12s infinite ease-in-out;
+  }
+
+  @keyframes float1 {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-10rem, 10rem); }
+    50% { transform: translate(5rem, 20rem); }
+    75% { transform: translate(-5rem, 15rem); }
+    100% { transform: translate(0, 0); }
+  }
+
+  @keyframes float2 {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(10rem, -15rem); }
+    50% { transform: translate(-5rem, -20rem); }
+    75% { transform: translate(5rem, -10rem); }
+    100% { transform: translate(0, 0); }
+  }
+
+  @media (max-width: 1090px) {
     .bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
-      display: flex;
-      flex-wrap: wrap;
+      height: 650vh; 
     }
-  
+
     .bg img {
-      width: 100%;
-      height: auto;
-      border-radius: 1rem;
-      background-color: transparent;
+      width: 40rem;
+      height: 40rem;
     }
-  
+
     .orb1 {
-      position: absolute;
-      top: 0;
-      left: 40rem;
+      top: 0vh; 
+      left: 5rem;
+      height: 40rem !important;
+      width: 40rem !important;
+      padding-bottom: 0;
+      animation: float1-mobile 8s infinite ease-in-out;
     }
-  
+
     .orb2 {
-      position: absolute;
-      top: 60rem;
-      right: 40rem;
+      top: 85vh; 
+      right: 5rem;
+      height: 40rem !important;
+      width: 40rem !important;
+      animation: float2-mobile 9s infinite ease-in-out;
     }
-  
-    @media (max-width: 1090px) {
-      .bg {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, auto);
-        gap: 1rem;
-      }
-  
-      .bg img {
-        width: 100%;
-        height: auto;
-      }
-  
-      .orb1 {
-        position: absolute;
-        top: 0;
-        left: 20rem;
-      }
-  
-      .orb2 {
-        position: absolute;
-        top: 20rem;
-        right: 20rem;
-      }
+
+    .mobile-only {
+      display: block; 
     }
-  </style>
+
+    .orb3 {
+      top: 170vh; 
+      left: 2rem;
+      height: 40rem !important;
+      width: 40rem !important;
+      animation: float3-mobile 10s infinite ease-in-out;
+    }
+
+    .orb4 {
+      top: 255vh; 
+      right: 2rem;
+      height: 40rem !important;
+      width: 40rem !important;
+      animation: float4-mobile 11s infinite ease-in-out;
+    }
+
+    .orb5 {
+      top: 340vh; 
+      left: 4rem;
+      height: 40rem !important;
+      width: 40rem !important;
+      animation: float5-mobile 12s infinite ease-in-out;
+    }
+
+    .orb6 {
+      top: 425vh; 
+      right: 4rem;
+      height: 40rem !important;
+      width: 40rem !important;
+      animation: float6-mobile 13s infinite ease-in-out;
+    }
+
+    .orb7 {
+      top: 510vh; 
+      left: 3rem;
+      height: 40rem !important;
+      width: 40rem !important;
+      animation: float7-mobile 14s infinite ease-in-out;
+    }
+
+    .orb8 {
+      top: 595vh; 
+      right: 3rem;
+      height: 40rem !important;
+      width: 40rem !important;
+      animation: float8-mobile 15s infinite ease-in-out;
+    }
+
+    @keyframes float1-mobile {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(-5rem, 5rem); }
+      50% { transform: translate(3rem, 10rem); }
+      75% { transform: translate(-3rem, 7rem); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @keyframes float2-mobile {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(5rem, -7rem); }
+      50% { transform: translate(-3rem, -10rem); }
+      75% { transform: translate(3rem, -5rem); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @keyframes float3-mobile {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(-4rem, 6rem); }
+      50% { transform: translate(4rem, 8rem); }
+      75% { transform: translate(-4rem, 4rem); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @keyframes float4-mobile {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(6rem, -6rem); }
+      50% { transform: translate(-4rem, -8rem); }
+      75% { transform: translate(4rem, -4rem); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @keyframes float5-mobile {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(-5rem, 5rem); }
+      50% { transform: translate(5rem, 7rem); }
+      75% { transform: translate(-3rem, 9rem); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @keyframes float6-mobile {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(7rem, -5rem); }
+      50% { transform: translate(-5rem, -7rem); }
+      75% { transform: translate(3rem, -9rem); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @keyframes float7-mobile {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(-6rem, 4rem); }
+      50% { transform: translate(6rem, 6rem); }
+      75% { transform: translate(-4rem, 8rem); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @keyframes float8-mobile {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(5rem, -8rem); }
+      50% { transform: translate(-6rem, -6rem); }
+      75% { transform: translate(4rem, -10rem); }
+      100% { transform: translate(0, 0); }
+    }
+  }
+
+  @media (min-width: 1091px) {
+    .mobile-only {
+      display: none;
+    }
+  }
+</style>

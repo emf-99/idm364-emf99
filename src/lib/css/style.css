@@ -19,6 +19,7 @@ h1 {
   font-size: 64px;
   font-style: normal;
   font-weight: 300;
+  line-height: 40px;
 }
 
 h2 {
@@ -30,7 +31,6 @@ h2 {
 
 .prod-price p {
   font-family: "DM Sans";
-  font-size: 40px;
   font-style: italic;
   font-weight: 500;
 }
@@ -88,4 +88,44 @@ button:hover {
   to {
     opacity: 1;
   }
+}
+
+.arrow {
+  height: 30px;
+  width: 30px;
+}
+
+@media (max-width: 650px) {
+  h1 {
+    font-size: 48px;
+  }
+
+  .arrow {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  body, .content, .content body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .prod-card {
+    width: 95% !important;
+  }
+  .prod-name h2 {
+    font-size: 1.25rem !important;
+  }
+  .prod-name p {
+    font-size: 1rem !important;
+  }
+  .prod-price p {
+    font-size: 1rem !important;
+  }
+  p .add-to-cart-btn {
+    font-size: 1rem !important;
+  }
+
 }

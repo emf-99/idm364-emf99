@@ -23,7 +23,7 @@
     <div class="row">
         <div class="prod-name">
           <h1>{product.title}</h1>
-            <img src="/assets/images/icons/arrow.svg" width="18rem" height="18rem" alt="arrow" />
+            <img src="/assets/images/icons/arrow.svg" class="arrow" width="18rem" height="18rem" alt="arrow" />
         </div>
 
         <div class="prod-row">
@@ -153,6 +153,10 @@
       width: 100%;
   }
 
+  .prod-title h1{
+    padding-bottom: 1rem;
+  }
+
   .prod-desc {
       display: flex;
       flex-direction: column;
@@ -245,7 +249,32 @@
           align-items: center;
           justify-content: center;
       }
+
+      .add-to-cart {
+          padding-left: 25px;
+          gap: 25px;
+      }
+
+      .add-to-cart-btn {
+          padding-left: 25px;
+      }
   }
+
+  @media (max-width: 1270px) {
+    .add-to-cart {
+          min-width: 200px;
+          height: auto;
+          padding-left: 15px;
+          gap: 15px;
+      }
+
+      .add-to-cart-btn {
+          min-width: 70px;
+          height: auto;
+          padding-left: 15px;
+          font-size: 12px;
+      }
+}
 
   @media (max-width: 980px) {
       .body {
@@ -294,6 +323,7 @@
           width: 100%;
       }
   }
+
 /* 
   @media (max-width: 700px){
 
@@ -365,16 +395,17 @@
           max-width: 90%;
       }
       .add-to-cart {
-          max-width: 100%;
+          min-width: 200px;
           height: auto;
           padding-left: 30px;
-          gap: 25px;
+          gap: 10px;
       }
 
       .add-to-cart-btn {
-          max-width: 100%;
+          min-width: 70px;
           height: auto;
           padding-left: 2px;
+          font-size: 12px;
       }
   }
 
