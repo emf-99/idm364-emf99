@@ -21,7 +21,7 @@
   <div class="bg">
     <img src="/assets/images/backgrounds/bg-orb.png" class="orb1" alt="background" />
     <img src="/assets/images/backgrounds/bg-orb.png" class="orb2" alt="background" />
-    <!-- Additional orbs for mobile only -->
+    <!-- additional orbs for mobile only -->
     <img src="/assets/images/backgrounds/bg-orb.png" class="orb3 mobile-only" alt="background" />
     <img src="/assets/images/backgrounds/bg-orb.png" class="orb4 mobile-only" alt="background" />
     <img src="/assets/images/backgrounds/bg-orb.png" class="orb5 mobile-only" alt="background" />

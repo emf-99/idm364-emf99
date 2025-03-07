@@ -6,14 +6,14 @@ export async function load() {
     const { data, error } = await supabase.from('products').select('*');
     if (error) {
       console.error('Supabase error:', error);
-      throw error; // Re-throw to see details in the terminal
+      throw error; // see details in the terminal
     }
-    console.log('Fetched products:', data); // Log successful data
+    console.log('Fetched products:', data); // log successful data
     return {
       products: data ?? []
     };
   } catch (err) {
     console.error('Load function error:', err);
-    throw err; // Let SvelteKit handle the error
+    throw err; // svelte handle the error
   }
 }

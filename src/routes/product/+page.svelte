@@ -5,7 +5,7 @@
 
 <ProductDetail />
 
-<style>
+<!-- <style>
     .prod-img img {
       width: 100%;
       height: auto;
@@ -16,4 +16,4 @@
     .prod-img {
       background-color: transparent;
     }
-</style>
+</style> -->

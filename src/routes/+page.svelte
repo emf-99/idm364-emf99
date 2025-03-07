@@ -77,7 +77,6 @@
     padding-bottom: 5rem;
   }
 
-  /* Media queries remain unchanged */
   @media (max-width: 1310px) {
     .body {
       max-width: 80%;
