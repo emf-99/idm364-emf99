@@ -27,6 +27,7 @@ h2 {
   font-size: 40px;
   font-style: normal;
   font-weight: 300;
+  text-align: left;
 }
 
 .prod-price p {
@@ -51,6 +52,7 @@ h2 {
   justify-content: center;
   padding: 1rem;
   background-color: var(--light-gray);
+  overflow: hidden;
 }
 
 button {

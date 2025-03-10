@@ -4,15 +4,48 @@
   import Header from '$lib/Header.svelte';
   import Hero from '$lib/Hero.svelte';
   import Footer from '$lib/Footer.svelte';
-  import '$lib/css/style.css'; 
-  import '$lib/css/cart.css'; 
+  import '$lib/css/style.css';
+  import '$lib/css/cart.css';
 
   let { children } = $props();
+
+  let isHeroVisible = $state(true);
+  let heroElement = $state();
+
+  $effect(() => {
+    console.log('Current isHeroVisible:', isHeroVisible);
+    if (heroElement) {
+      console.log('Hero element bound:', heroElement);
+    } else {
+      console.log('Hero element not yet bound');
+    }
+  });
+
+  $effect(() => {
+    if (heroElement && typeof window !== 'undefined') {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            console.log('Observer fired:', entry.isIntersecting);
+            isHeroVisible = entry.isIntersecting;
+          });
+        },
+        { threshold: 0.0 } // trigger when hero is out of view
+      );
+      observer.observe(heroElement);
+      return () => observer.disconnect(); // cleanupppp
+    }
+  });
 </script>
 
-<!-- hero for main page only -->
 {#if $page.url.pathname === '/'}
-  <Hero />
+  <div bind:this={heroElement}>
+    <Hero />
+  </div>
+  {#if !isHeroVisible}
+    <Header />
+    {console.log('Rendering Header')}
+  {/if}
 {:else}
   <Header />
 {/if}
@@ -21,7 +54,6 @@
   <div class="bg">
     <img src="/assets/images/backgrounds/bg-orb.png" class="orb1" alt="background" />
     <img src="/assets/images/backgrounds/bg-orb.png" class="orb2" alt="background" />
-    <!-- additional orbs for mobile only -->
     <img src="/assets/images/backgrounds/bg-orb.png" class="orb3 mobile-only" alt="background" />
     <img src="/assets/images/backgrounds/bg-orb.png" class="orb4 mobile-only" alt="background" />
     <img src="/assets/images/backgrounds/bg-orb.png" class="orb5 mobile-only" alt="background" />
@@ -45,6 +77,7 @@
     padding: 1rem;
     background-color: var(--light-gray);
     min-height: 100vh;
+    overflow: hidden !important;
   }
 
   .bg {
@@ -82,25 +115,9 @@
     animation: float2 12s infinite ease-in-out;
   }
 
-  @keyframes float1 {
-    0% { transform: translate(0, 0); }
-    25% { transform: translate(-10rem, 10rem); }
-    50% { transform: translate(5rem, 20rem); }
-    75% { transform: translate(-5rem, 15rem); }
-    100% { transform: translate(0, 0); }
-  }
-
-  @keyframes float2 {
-    0% { transform: translate(0, 0); }
-    25% { transform: translate(10rem, -15rem); }
-    50% { transform: translate(-5rem, -20rem); }
-    75% { transform: translate(5rem, -10rem); }
-    100% { transform: translate(0, 0); }
-  }
-
   @media (max-width: 1090px) {
     .bg {
-      height: 650vh; 
+      height: 650vh;
     }
 
     .bg img {
@@ -109,7 +126,7 @@
     }
 
     .orb1 {
-      top: 0vh; 
+      top: 0vh;
       left: 5rem;
       height: 40rem !important;
       width: 40rem !important;
@@ -118,7 +135,7 @@
     }
 
     .orb2 {
-      top: 85vh; 
+      top: 85vh;
       right: 5rem;
       height: 40rem !important;
       width: 40rem !important;
@@ -126,11 +143,11 @@
     }
 
     .mobile-only {
-      display: block; 
+      display: block;
     }
 
     .orb3 {
-      top: 170vh; 
+      top: 170vh;
       left: 2rem;
       height: 40rem !important;
       width: 40rem !important;
@@ -138,7 +155,7 @@
     }
 
     .orb4 {
-      top: 255vh; 
+      top: 255vh;
       right: 2rem;
       height: 40rem !important;
       width: 40rem !important;
@@ -146,7 +163,7 @@
     }
 
     .orb5 {
-      top: 340vh; 
+      top: 340vh;
       left: 4rem;
       height: 40rem !important;
       width: 40rem !important;
@@ -154,7 +171,7 @@
     }
 
     .orb6 {
-      top: 425vh; 
+      top: 425vh;
       right: 4rem;
       height: 40rem !important;
       width: 40rem !important;
@@ -162,7 +179,7 @@
     }
 
     .orb7 {
-      top: 510vh; 
+      top: 510vh;
       left: 3rem;
       height: 40rem !important;
       width: 40rem !important;
@@ -170,7 +187,7 @@
     }
 
     .orb8 {
-      top: 595vh; 
+      top: 595vh;
       right: 3rem;
       height: 40rem !important;
       width: 40rem !important;
