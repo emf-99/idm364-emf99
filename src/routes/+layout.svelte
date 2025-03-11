@@ -30,7 +30,7 @@
             isHeroVisible = entry.isIntersecting;
           });
         },
-        { threshold: 0.0 } // trigger when hero is out of view
+        { threshold: 0.001 } // trigger when hero is out of view
       );
       observer.observe(heroElement);
       return () => observer.disconnect(); // cleanupppp

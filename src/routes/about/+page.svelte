@@ -1,3 +1,4 @@
+<!-- src/routes/about/+page.svelte -->
 <div class="body">
 
     <div class="about-container">

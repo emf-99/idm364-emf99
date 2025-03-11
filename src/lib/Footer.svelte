@@ -1,4 +1,4 @@
-<!-- Footer.svelte -->
+<!-- src/lib/Footer.svelte -->
 <script lang="js">
     // import '$lib/css/style.css';
 </script>

@@ -1,3 +1,4 @@
+// src/routes/api/products/+server.js
 import { json } from '@sveltejs/kit';
 import { supabase } from '$lib/server/supabase_client.js';
 

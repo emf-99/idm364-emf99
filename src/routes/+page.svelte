@@ -1,3 +1,4 @@
+<!-- src/routes/+page.svelte -->
 <script lang="js">
   import { onMount } from 'svelte';
   import { selectedProduct } from '$lib/store';

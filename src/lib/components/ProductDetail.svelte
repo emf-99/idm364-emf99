@@ -1,69 +1,73 @@
 <!-- src/lib/components/ProductDetail.svelte -->
 <script lang="js">
-    import { selectedProduct } from '$lib/store';
+    import { selectedProduct } from '$lib/stores/selectedProduct';
     import { cart } from '$lib/stores/cart';
-
-    $: product = $selectedProduct;
-
+  
+    let { product } = $props(); // receive product
+  
+    $effect(() => {
+      if (product) {
+        $selectedProduct = product; 
+      }
+    });
+  
     function addToCart() {
-        cart.update(items => {
-            const existingItem = items.find(item => item.id === product.id);
-            if (existingItem) {
-                return items.map(item => 
-                    item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
-                );
-            }
-            return [...items, { ...product, quantity: 1 }];
-        });
+      cart.update(items => {
+        const existingItem = items.find(item => item.id === product.id);
+        if (existingItem) {
+          return items.map(item =>
+            item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+          );
+        }
+        return [...items, { ...product, quantity: 1 }];
+      });
     }
-</script>
-
-{#if product}
-  <div class="body">
-    <div class="row">
+  </script>
+  
+  {#if product}
+    <div class="body">
+      <div class="row">
         <div class="prod-name">
           <h1>{product.title}</h1>
-            <img src="/assets/images/icons/arrow.svg" class="arrow" width="18rem" height="18rem" alt="arrow" />
+          <img src="/assets/images/icons/arrow.svg" class="arrow" width="18rem" height="18rem" alt="arrow" />
         </div>
-
+  
         <div class="prod-row">
-            <div class="prod-card">
-                <div class="prod-img">
-                  <img src={product.img} alt={product.title} />
-                </div>
-                <div class="prod-info">
-                    <div class="prod-main">
-                        <div class="prod-title">
-                          <h1>{product.title}</h1>
-                          <p>{product.artist}</p>
-                        </div>
-
-                        <div class="prod-price">
-                          <p>${product.price.toFixed(2)}</p>
-                        </div>
-                    </div>
-
-                    <div class="prod-desc">
-                        <div class="prod-desc-text">
-                          <p class="prod-desc">{product.desc}</p>
-                        </div>
-
-                        <button class="add-to-cart" on:click={() => addToCart()}>
-                            <p class="add-to-cart-btn">Add to cart</p>
-                            <div class="cart-icon"> 
-                                <div class="border">
-                                    <img src="/assets/images/icons/cart.svg" width="28px" height="27px" alt="cart"/>
-                                </div>
-                            </div>
-                        </button>
-                    </div>
-                </div>
+          <div class="prod-card">
+            <div class="prod-img">
+              <img src={product.img} alt={product.title} />
             </div>
+            <div class="prod-info">
+              <div class="prod-main">
+                <div class="prod-title">
+                  <h1>{product.title}</h1>
+                  <p>{product.artist}</p>
+                </div>
+                <div class="prod-price">
+                  <p>${product.price.toFixed(2)}</p>
+                </div>
+              </div>
+  
+              <div class="prod-desc">
+                <div class="prod-desc-text">
+                  <p class="prod-desc">{product.desc}</p>
+                </div>
+                <button class="add-to-cart" onclick={() => addToCart()}>
+                  <p class="add-to-cart-btn">Add to cart</p>
+                  <div class="cart-icon">
+                    <div class="border">
+                      <img src="/assets/images/icons/cart.svg" width="28px" height="27px" alt="cart" />
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-  </div>
-{/if}
-
+  {/if}
+  
 <style>
   * {
       background-color: transparent;
