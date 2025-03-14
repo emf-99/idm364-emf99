@@ -44,12 +44,12 @@
     border-radius: 1rem;
     background: var(--white);
     box-shadow: 0px 2px 69.3px 0px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
   }
 
   .prod-card:hover {
-    transform: scale(1.05); /* Slight scale up */
-    box-shadow: 0px 4px 80px 0px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    transform: scale(1.05); 
+    box-shadow: 0px 4px 80px 0px rgba(0, 0, 0, 0.1); 
   }
 
   .prod-img img {

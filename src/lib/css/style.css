@@ -39,7 +39,7 @@ h2 {
 :root {
   --white: #FFFFFF;
   --yellow: #DEE21B;
-  --overlay: rgba(222, 226, 27, 0.4);
+  --overlay: rgba(222, 226, 27, 0.45);
   --olive: #707235;
   --light-gray: #F1F1F1;
   --dark-gray: #1C1B1F;
