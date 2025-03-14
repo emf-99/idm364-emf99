@@ -46,10 +46,10 @@
       background-position: top;
       width: 100%;
       height: 100px; 
-      border-radius: 0 0 40px 40px;
+      border-radius: 0 0 60px 60px;
       box-shadow: 0px 4px 54.4px 0px rgba(0, 0, 0, 0.25);
       overflow: hidden; 
-      margin-bottom: -20px; 
+      margin-bottom: -40px; 
   }
 
   .logo {
